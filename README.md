@@ -1,4 +1,3 @@
-# Versatile-
 # 🛡️ Versatile — Advanced Network Traffic Analyzer
 
 <p align="center">
@@ -48,3 +47,112 @@ With rich color-coded console output, **Versatile** helps network admins and cyb
 
 ```bash
 pip install -r requirements.txt
+```
+
+*requirements.txt* includes:
+
+```
+scapy
+rich
+```
+
+---
+
+## 💻 Usage
+
+### Command line options
+
+```bash
+usage: versatile.py [-h] [-f FILE] [-i INTERFACE] [-o OUTPUT] [-v] [-t INTERVAL]
+
+Advanced PCAP Analyzer with live capture support
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  Input PCAP file to analyze
+  -i INTERFACE, --interface INTERFACE
+                        Network interface for live capture
+  -o OUTPUT, --output OUTPUT
+                        Output report file (txt or json) (default: report.txt)
+  -v, --verbose         Verbose output to console
+  -t INTERVAL, --interval INTERVAL
+                        Report interval in seconds for live capture (default: 10)
+```
+
+---
+
+### Examples
+
+- Analyze a PCAP file and save a text report:
+
+```bash
+python versatile.py -f capture.pcap -o analysis_report.txt
+```
+
+- Capture live traffic on interface `eth0` and print periodic reports (every 15 seconds):
+
+```bash
+python versatile.py -i eth0 -t 15
+```
+
+- Capture live traffic on `wlan0` with verbose console output and export JSON report:
+
+```bash
+python versatile.py -i wlan0 -v -o live_report.json
+```
+
+> **Note:** Press `Ctrl+C` during live capture to stop and save the final report.
+
+---
+
+## 🎨 Output Preview
+
+![Sample Output](https://raw.githubusercontent.com/klothwaresbin/versatile/main/docs/sample_output.png)
+
+*Example of colorful tables and summaries in the console powered by rich.*
+
+---
+
+## 🧩 How It Works
+
+1. **Packet capture/reading:**  
+   Captures live traffic or loads packets from a PCAP file.
+
+2. **Packet inspection:**  
+   Analyzes TCP, UDP, and ICMP packets, tracking flags, ports, and timing.
+
+3. **Anomaly detection:**  
+   Applies thresholds to detect suspicious behaviors like scans and floods.
+
+4. **Reporting:**  
+   Generates a clear, color-coded summary report in the console and exports results to a file.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/klothwaresbin/versatile/issues).
+
+---
+
+## 🙌 Acknowledgements
+
+- Built with [Scapy](https://scapy.net/) for packet processing  
+- Powered by [Rich](https://github.com/Textualize/rich) for beautiful terminal output  
+
+---
+
+## 📞 Contact
+
+Created by **Your Name** — [connor341wort@gmail.com](mailto:your.email@example.com)  
+Follow me on [GitHub](https://github.com/klothwaresbin)
+
+---
+
+*Stay secure and keep your network versatile! 🛡️*
