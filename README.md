@@ -1,26 +1,50 @@
 # Versatile-
-Tool Description
+# 🛡️ Versatile — Advanced Network Traffic Analyzer
 
-Advanced Network Traffic Analyzer with Real-Time and PCAP Support
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.8%2B-blue.svg" alt="Python Version" />
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License" />
+  <img src="https://img.shields.io/badge/status-Active-brightgreen.svg" alt="Status" />
+</p>
 
-This Python-based tool is designed to analyze network traffic data captured either from live network interfaces or from pre-recorded PCAP files. It inspects packets at a granular level to detect a variety of suspicious and anomalous network behaviors that could indicate malicious activity or network misuse.
+---
 
-Key features include:
+## 🎯 What is Versatile?
 
-    Comprehensive Protocol Analysis: Supports in-depth inspection of TCP, UDP, and ICMP protocols to identify unusual patterns such as scan attempts, flood attacks, and abnormal flag usage.
+**Versatile** is a powerful, real-time and offline network traffic analyzer written in Python.  
+It inspects PCAP files or live network interfaces to detect suspicious behaviors such as:
 
-    Suspicious Behavior Detection: Automatically flags common reconnaissance and attack techniques, including SYN scans, FIN scans, NULL scans, Xmas scans, RST floods, UDP floods, UDP port sweeps, and ICMP floods.
+- SYN, FIN, NULL, Xmas scans  
+- RST floods  
+- UDP floods and port sweeps  
+- ICMP floods and unusual ICMP types  
+- Unusual port usage  
+- Short-lived TCP connections (possible probes or scans)  
 
-    Unusual Port Activity Monitoring: Detects connections involving uncommon or suspicious source and destination ports outside of typical well-known services.
+With rich color-coded console output, **Versatile** helps network admins and cybersecurity professionals quickly identify potential threats and anomalies in their networks.
 
-    Short-Lived TCP Connections Identification: Highlights TCP connections that are established and closed rapidly, which can be an indicator of scanning or probing.
+---
 
-    Real-Time and Offline Analysis: Capable of processing live network traffic from a specified network interface with periodic reporting, or analyzing offline PCAP files with detailed summary reports.
+## ✨ Features
 
-    Clear and Colorful Console Output: Utilizes a modern, colorful, and easy-to-read console interface using the rich library, displaying findings in organized tables with clear headings for quick assessment.
+- Supports **live capture** and **offline PCAP analysis**  
+- Detects common network scanning and flooding attack patterns  
+- Highlights unusual and suspicious port activities  
+- Periodic live reporting with option for verbose output  
+- Generates detailed, exportable reports in JSON or text formats  
+- Clean, modern console UI powered by [rich](https://github.com/Textualize/rich)  
+- Handles interrupt signals gracefully with final report generation  
 
-    Exportable Reports: Allows exporting analysis results to JSON or plain text files for record-keeping, further investigation, or sharing with others.
+---
 
-    Interrupt Handling: Gracefully stops live capture upon user interruption (Ctrl+C), immediately generating and saving a final comprehensive report.
+## 🚀 Installation
 
-This tool is ideal for network administrators, security analysts, and cybersecurity enthusiasts who want a lightweight yet powerful utility to quickly detect suspicious network behaviors and potential attacks in real-time or through offline traffic analysis.
+### Prerequisites
+
+- Python 3.8 or higher  
+- `pip` package manager  
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
